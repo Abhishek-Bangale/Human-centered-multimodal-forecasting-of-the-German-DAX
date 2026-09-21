@@ -1,0 +1,39 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Streamlit / app runtime artifacts ---
+src/app/dax_data.csv
+
+# --- Raw / intermediate preprocessing outputs ---
+# All of src/preprocessing/*.py's raw/intermediate output (GDELT zip dumps,
+# extracted headline leads, fetched price data, and the pipeline run
+# manifest) lives under data/raw/ — see README and pipeline_config.py.
+# Not shipped in the repo; regenerate locally by running the pipeline.
+#
+# Note: preprocess.py (stage 5) writes its FINAL output directly into
+# data/dax_final_with_sentiment_*.parquet — the same files shipped in this
+# repo — so re-running the pipeline will show those as modified in `git
+# status` rather than as new untracked files. That's intentional: it's how
+# you'd update the shipped dataset to a new date range.
+data/raw/
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Logs ---
+*.log
